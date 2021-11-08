@@ -1,65 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Signika+Negative:wght@400;700&display=swap');
-
-* {
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap'); * {
     margin: 0;
     padding: 0;
 }
 
 :root {
+    font-family: 'DotGothic16', sans-serif;
     --main-color: black;
-    --accent-color: rgb(82, 165, 238);
-    --highlight-color: red;
-    font-family: 'Fruktur', cursive;
+    --accent-color: rgb(50, 206, 211);
+    scroll-behavior: smooth;
 }
 
 img {
-    di
-}
-
-.logo {
-    color: var(--highlight-color);
-    border: 10px solid var(--accent-color);
-    text-align: center;
-}
-
-.menu {
-    display: flex;
-    margin-top: 20px;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.menu a {
-    border: 10px solid var(--accent-color);
-    color: var(--main-color);
     display: block;
+    width: 100%;
+}
+
+.container {
+    max-width: 980px;
+    margin: auto;
+}
+
+header nav {
+    background-color: var(--accent-color);
     padding: 5px;
-    text-decoration: none;
+}
+
+header nav .logo, header .banner h1 {
+    color: var(--main-color);
+    font-size: 3.5rem;
+    text-align: center;
     text-transform: uppercase;
 }
 
-.menu a:hover {
-    text-decoration: underline;
+header nav .menu {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+header nav .menu a {
+    color: var(--main-color);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header nav .menu a:hover {
+    font-weight: bold;
+}
+
+@media (min-width: 600px) {
+    header nav .container {
+        display: flex;
+    }
+
+    header nav .menu {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        flex: 1;
+    }
 }
 
 header .banner {
     background-image: url(../img/baby-yoda.svg);
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     min-height: 400px;
 }
 
 header .banner h1 {
-    font-family: 'Signika Negative', sans-serif;
+    color: var(--accent-color);
 }
 
-main div.products {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+/* Just for fun
+@media (min-width: 500px) {
+    main .products {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    main .products .product {
+        box-sizing: border-box;
+        width: 47%;
+        margin: 1%;
+    }
 }
 
-@media (min-width: 800px) {
-    main div.products {
+@media (min-width: 660px) {
+    main .products .product {
+        width: 31%;
+        margin: 1%;
+    }
+} */
+@media (min-width: 500px) {
+    main .products {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+    }
+}
+
+@media (min-width: 660px) {
+    main .products {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 980px) {
+    main .products {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+}
+
+main .products .product {
+    border: 1px solid var(--main-color);
+    padding: 5px;
 }
